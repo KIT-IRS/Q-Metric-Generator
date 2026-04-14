@@ -1,6 +1,6 @@
-## This is the first, proof of concept version of the application. Further development will be done in different branches.
+# Q-Metrics Generator
 
-Q-Metrics Generator
+## This is the first, proof of concept version of the application. Further development will be done in different branches.
 
 An application for editing and managing the Q-Metrics Engineering Artetfact, consisting of a C# backend and a Next.js frontend.
 The contents provided in this repository are intended solely for demonstration purposes and represent the exemplary research prototype.
