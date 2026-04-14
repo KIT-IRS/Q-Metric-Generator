@@ -1,0 +1,65 @@
+services:
+  concept-server:
+    image: python:3-slim
+    working_dir: /app
+    volumes:
+      - ./server/concept_server.py:/app/concept_server.py:ro
+      - ./server/ValIntent.json:/app/ValIntent.json:ro
+    command: python concept_server.py
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/test')"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      concept-server:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - INIT_INTENT_SEMANTICS=true
+      - LOG_LEVEL=Information
+    networks:
+      - app-network
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /app
+          ignore:
+            - bin/
+            - obj/
+        - action: rebuild
+          path: ./server/generator_backend_cs.csproj
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:8080
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

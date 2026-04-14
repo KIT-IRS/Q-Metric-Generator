@@ -1,0 +1,89 @@
+{
+  "idShort": "IntentionSemantics",
+  "id": "irs.kit.edu/concept-store/IntentionSemantics",
+  "modelType": "ConceptDescription",
+  "embeddedDataSpecifications": [{
+    "dataSpecification": {
+      "type": "ExternalReference",
+      "keys": [{
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+      }]
+    },
+    "dataSpecificationContent": {
+      "modelType": "DataSpecificationIec61360",
+      "preferredName": [
+        { "language": "de", "text": "Intentionssemantik" },
+        { "language": "en", "text": "Intention Semantics" }
+      ],
+      "shortName": [
+        { "language": "en", "text": "ValIntent" }
+      ],
+      "definition": [
+        { "language": "de", "text": "Kennzeichnet die Beziehung eines Attributwerts zur Realität und seinen Verifikationsstatus im Lebenszyklus des Informationsmodells." },
+        { "language": "en", "text": "Indicates the relationship of an attribute value to reality and its verification status within the information model lifecycle." }
+      ],
+      "dataType": "STRING",
+      "valueList": {
+        "valueReferencePairs": [
+          {
+            "value": "actual",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/actual" }]
+            }
+          },
+          {
+            "value": "default",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/default" }]
+            }
+          },
+          {
+            "value": "generated",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/generated" }]
+            }
+          },
+          {
+            "value": "placeholder",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/placeholder" }]
+            }
+          },
+          {
+            "value": "hypothetical",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/hypothetical" }]
+            }
+          },
+          {
+            "value": "invalid",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/invalid" }]
+            }
+          },
+          {
+            "value": "outdated",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/outdated" }]
+            }
+          },
+          {
+            "value": "null",
+            "valueId": {
+              "type": "ExternalReference",
+              "keys": [{ "type": "GlobalReference", "value": "irs.kit.edu/concept-store/IntentionSemantics/null" }]
+            }
+          }
+        ]
+      }
+    }
+  }]
+}
