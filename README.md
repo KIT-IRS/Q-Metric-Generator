@@ -3,6 +3,9 @@
 Q-Metrics Generator
 
 An application for editing and managing the Q-Metrics Engineering Artetfact, consisting of a C# backend and a Next.js frontend.
+The contents provided in this repository are intended solely for demonstration purposes and represent the exemplary research prototype.
+No liability is assumed for the content.
+Any use of the presented prototypes in production environments is at the user's own risk.
 
 ## Project Structure
 
@@ -35,6 +38,8 @@ Generator/
 ```
 
 ## Quick Start
+
+If you wish to provide this tool for users who do not have sufficient knowldge of docker/podman, build the image and provide it in your preferred environment with one container per session (they are slim enough :) )
 
 ### Using Docker Compose (Recommended)
 
