@@ -1,5 +1,7 @@
 # Q-Metrics Generator
 
+If you are just here to find the Q-Metric aml artifact you can find it [here](server/Q-Metrics_template.aml)
+
 ## This is the first, proof of concept version of the application. Further development will be done in different branches.
 
 An application for editing and managing the Q-Metrics Engineering Artetfact, consisting of a C# backend and a Next.js frontend.
